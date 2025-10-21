@@ -1,39 +1,69 @@
 .home-container {
   .hero {
-    background: linear-gradient(135deg, #00a8e8 0%, #6c5ce7 100%);
-    color: white;
-    padding: 6rem 2rem;
+  // Fondo de imagen y degradado-overlay
+  position: relative;
+  background: url('../../../assets/images/fondoHome.jpg') center center/cover no-repeat;
+  min-height: 467px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -4px;
+  // Overlay para oscurecer y destacar texto
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(25,25,50,0.4) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+    @media (max-width: 765px) {
+        height: 463px;
+      }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
     text-align: center;
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background-color: #ff6b6b;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-size: 1.2rem;
-        transition: transform 0.3s;
-
-        &:hover {
-          transform: scale(1.05);
-        }
+    h1 {
+      font-size: 3rem;
+      @media (max-width: 765px) {
+        font-size: 2rem;
       }
     }
+    p {
+      font-size: 20px;
+      @media (max-width: 765px) {
+        font-size: 16px;
+      }
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ff8888 100%);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 40px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 26px rgba(255, 107, 107, 0.18);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      margin-top: 1rem;
+      &:hover,
+      &:focus {
+        background: linear-gradient(135deg, #ff5252 0%, #ff7575 100%);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 32px rgba(255, 107, 107, 0.28);
+        outline: none;
+      }
+    }
+
   }
+}
+
 
   .latest-videos {
     padding: 4rem 2rem;

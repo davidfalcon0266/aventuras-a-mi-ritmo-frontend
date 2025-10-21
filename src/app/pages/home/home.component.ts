@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   loadLatestVideos(): void {
     this.youtubeService.getVideos().subscribe({
       next: (data) => {
+        console.log(data)
         this.latestVideos = data.slice(0, 6);
         this.loading = false;
       },

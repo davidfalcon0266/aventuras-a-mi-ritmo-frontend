@@ -10,8 +10,8 @@
   </section>
 
   <section class="latest-videos">
-    <h2>Últimos Videos</h2>
     <div *ngIf="loading" class="loading">Cargando videos...</div>
+    <h2 *ngIf="latestVideos.length">Últimos Videos</h2>
     <app-video-grid [videos]="latestVideos" *ngIf="!loading"></app-video-grid>
   </section>
 

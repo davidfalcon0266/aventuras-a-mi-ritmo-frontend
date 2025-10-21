@@ -1,9 +1,16 @@
 export interface Video {
-  id: string;
-  videoId: string;
-  title: string;
-  description: string;
-  thumbnail: string;
+  id: {
+    videoId: string;
+  }
+  snippet: {
+    title: string;
+    thumbnails: {
+      high: {
+       url: ''
+      }
+    }
+    description: string;
+  }
   publishedAt: Date;
   views?: number;
   likes?: number;
