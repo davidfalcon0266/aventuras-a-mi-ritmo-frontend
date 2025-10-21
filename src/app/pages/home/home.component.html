@@ -1,1 +1,26 @@
-<p>home works!</p>
+<div class="home-container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Aventuras a mi Ritmo</h1>
+      <p>Explora playas, ciudades y aventuras increíbles</p>
+      <a href="https://www.youtube.com/@aventurasamiritmo" target="_blank" class="cta-button">
+        Suscríbete al Canal
+      </a>
+    </div>
+  </section>
+
+  <section class="latest-videos">
+    <h2>Últimos Videos</h2>
+    <div *ngIf="loading" class="loading">Cargando videos...</div>
+    <app-video-grid [videos]="latestVideos" *ngIf="!loading"></app-video-grid>
+  </section>
+
+  <section class="about-preview">
+    <h2>Sobre el Canal</h2>
+    <p>
+      Aventuras a mi Ritmo es un canal dedicado a explorar destinos increíbles,
+      desde playas paradisíacas hasta ciudades vibrantes. Únete a esta aventura
+      y descubre el mundo a tu propio ritmo.
+    </p>
+  </section>
+</div>

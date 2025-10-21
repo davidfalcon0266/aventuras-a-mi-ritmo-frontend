@@ -1,1 +1,76 @@
-<p>header works!</p>
+<!-- frontend/src/app/components/header/header.component.html -->
+
+<header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/images/logo.jpg" alt="Aventuras a mi Ritmo Logo">
+        <span class="logo-text">Aventuras a mi Ritmo</span>
+      </a>
+    </div>
+
+    <!-- Menú de Navegación -->
+    <nav class="nav-menu" [class.active]="menuOpen">
+      <ul>
+        <li>
+          <a routerLink="/" 
+             routerLinkActive="active" 
+             [routerLinkActiveOptions]="{exact: true}"
+             (click)="closeMenu()">
+            <i class="fas fa-home"></i>
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a routerLink="/videos" 
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <i class="fas fa-video"></i>
+            Videos
+          </a>
+        </li>
+        <li>
+          <a routerLink="/playlists" 
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <i class="fas fa-list"></i>
+            Playlists
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" 
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <i class="fas fa-envelope"></i>
+            Contacto
+          </a>
+        </li>
+      </ul>
+
+      <!-- Botón de YouTube -->
+      <a href="https://www.youtube.com/@aventurasamiritmo" 
+         target="_blank" 
+         class="btn-youtube">
+        <i class="fab fa-youtube"></i>
+        Suscríbete
+      </a>
+    </nav>
+
+    <!-- Botón Hamburguesa (móvil) -->
+    <button class="menu-toggle" 
+            [class.active]="menuOpen"
+            (click)="toggleMenu()"
+            aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay para cerrar menú en móvil -->
+<div class="menu-overlay" 
+    [class.active]="menuOpen" 
+    (click)="closeMenu()">
+</div>

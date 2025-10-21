@@ -1,0 +1,74 @@
+.home-container {
+  .hero {
+    background: linear-gradient(135deg, #00a8e8 0%, #6c5ce7 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: #ff6b6b;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .latest-videos {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .loading {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #888;
+    }
+  }
+
+  .about-preview {
+    background-color: #f8f9fa;
+    padding: 4rem 2rem;
+    text-align: center;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
+    }
+  }
+}
