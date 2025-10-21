@@ -1,1 +1,5 @@
-<p>videos works!</p>
+<section class="videos-section">
+  <h2>Últimos Videos</h2>
+  <div *ngIf="loading" class="loading">Cargando...</div>
+  <app-video-grid [videos]="videos" *ngIf="!loading"></app-video-grid>
+</section>
