@@ -1,0 +1,75 @@
+.contact-section {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  width: 90%;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #00a8e8;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        color: #2c3e50;
+        margin-bottom: .5rem;
+      }
+      input, textarea {
+        padding: 1rem;
+        border: 1.5px solid #e0e4ea;
+        border-radius: 10px;
+        font-size: 1rem;
+        background: #f7fafd;
+        resize: none;
+        transition: border 0.2s;
+
+        &:focus {
+          border: 1.5px solid #00a8e8;
+          outline: none;
+        }
+      }
+      .error {
+        color: #e74c3c;
+        font-size: 0.91rem;
+        margin-top: 0.3rem;
+      }
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #00a8e8 0%, #6c5ce7 100%);
+      color: #fff;
+      border: none;
+      border-radius: 55px;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+      cursor: pointer;
+
+      &:hover:not(:disabled) {
+        background: linear-gradient(135deg, #008ecf 0%, #5d54e7 100%);
+        transform: translateY(-2px) scale(1.05);
+      }
+      &:disabled {
+        background: #b8c6d9;
+        cursor: not-allowed;
+      }
+    }
+    .success-message {
+      color: #26ab5a;
+      text-align: center;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+  }
+}

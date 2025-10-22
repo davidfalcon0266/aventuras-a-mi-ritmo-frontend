@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<section class="contact-section">
+  <h2>Contacto</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+   <div class="form-group">
+    <label for="name">Nombre</label>
+    <input id="name"
+           formControlName="name"
+           type="text"
+           placeholder="Tu nombre"
+           [ngClass]="{ 'invalid': submitted && contactForm.controls['name'].invalid }"
+           (input)="onNameInput($event)"
+           autocomplete="off"
+           required>
+    <div *ngIf="submitted && contactForm.controls['name'].invalid" class="error">
+      Solo letras, sin números ni símbolos.
+    </div>
+  </div>
+    <div class="form-group">
+      <label for="email">Correo Electrónico</label>
+      <input id="email" formControlName="email" type="email" placeholder="ejemplo@email.com" required>
+      <div *ngIf="submitted && contactForm.controls['email'].invalid" class="error">Email válido es requerido.</div>
+    </div>
+    <div class="form-group">
+      <label for="message">Mensaje</label>
+      <textarea id="message" formControlName="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <div *ngIf="submitted && contactForm.controls['message'].invalid" class="error">Mensaje es requerido.</div>
+    </div>
+    <button class="cta-button"
+        type="submit"
+        [disabled]="contactForm.invalid || loading">
+        {{ loading ? 'Enviando...' : 'Enviar Mensaje' }}
+    </button>
+    <div *ngIf="success" class="success-message">¡Mensaje enviado con éxito!</div>
+    <div *ngIf="error" class="error">Ocurrió un error, intenta de nuevo.</div>
+  </form>
+</section>

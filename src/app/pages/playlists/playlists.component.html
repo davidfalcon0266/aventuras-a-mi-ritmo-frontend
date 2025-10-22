@@ -1,1 +1,14 @@
-<p>playlists works!</p>
+<section class="playlists-section">
+  <h2>Listas de Reproducción</h2>
+  <div *ngIf="loading" class="loading">Cargando playlists...</div>
+  <div class="playlist-grid" *ngIf="!loading">
+    <div *ngFor="let playlist of playlists" class="playlist-card" (click)="openPlaylist(playlist.id)">
+      <img [src]="playlist.snippet.thumbnails.medium.url" [alt]="playlist.snippet.title" class="playlist-thumb">
+      <div class="playlist-info">
+        <h3>{{ playlist.snippet.title }}</h3>
+        <p>{{ playlist.snippet.description | slice:0:80 }}{{ playlist.snippet.description.length > 80 ? '...' : '' }}</p>
+        <span class="video-count">{{ playlist.snippet.videoCount }} videos</span>
+      </div>
+    </div>
+  </div>
+</section>

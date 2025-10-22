@@ -66,7 +66,7 @@
 
 
   .latest-videos {
-    padding: 4rem 2rem;
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 
@@ -85,20 +85,22 @@
 
   .about-preview {
     background-color: #f8f9fa;
-    padding: 4rem 2rem;
     text-align: center;
+    padding: 0rem 2rem 1rem;
 
     h2 {
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     p {
       max-width: 800px;
       margin: 0 auto;
       font-size: 1.2rem;
-      line-height: 1.8;
+      line-height: 1.4;
       color: #555;
+      text-align: left;
+      margin-bottom: 20px;
     }
   }
 }
